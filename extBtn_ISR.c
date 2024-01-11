@@ -6,7 +6,7 @@
  */
 
 #include "stm32f407xx.h"
-
+#include "string.h"
 
 void delay( void );
 
@@ -27,6 +27,13 @@ GPIO_Handle_t extYellowLed, extRedLed, extGreenLed;
 
 int main( void )
 {
+	memset( &extYellowBtn, 0, sizeof( extYellowBtn ) );
+	memset( &extRedBtn, 0, sizeof( extYellowBtn ) );
+	memset( &extBlueBtn, 0, sizeof( extYellowBtn ) );
+	memset( &extYellowLed, 0, sizeof( extYellowBtn ) );
+	memset( &extRedLed, 0, sizeof( extYellowBtn ) );
+	memset( &extGreenLed, 0, sizeof( extYellowBtn ) );
+
 	GPIO_PeriClkControl(GPIOC, ENABLE);
 
 	extYellowBtn.pGPIOx = GPIOC;
